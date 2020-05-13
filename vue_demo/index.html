@@ -1,0 +1,82 @@
+<html>
+   <head>
+       <meta char
+      <title>VueJs Instance</title>
+      <script type = "text/javascript" src = "js/vue.js"></script>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+   </head>
+   <body>
+      <div id = "databinding" style = "">
+         <h1>Student Information</h1>
+         <div class="row">
+            <div class="mb-30">
+                <div class="col-sm 3">
+                    <span>Full Name</span>
+                    <input type = "text" placeholder = "Full Name" v-model = "name"/>
+                </div>
+            </div>
+            <div class="mb-30">
+                <div class="col-sm 3">
+                    <span>Birth Date</span>
+                    <input type = "date" placeholder = "Birth Date" v-model = "birth_date"/>
+                </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="mb-30">
+                <div class="col-sm 3">           
+                    <span>Student ID</span>
+                    <input type = "text" placeholder = "ID" v-model = "stu_id"/>
+                </div>
+            </div>
+            <div class="mb-30">
+                <div class="col-sm 3">
+                    <span>Gender</span>
+                    <select  v-model = "sex">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>   
+            </div>               
+        </div>
+        <div class="mt-10">
+         <button class="btn btn-info btn-lg" v-on:click = "showdata" 
+         v-bind:style = "styleobj">Add</button>
+        </div>
+        <br>
+         <table class="table table-bordered table-striped">
+             <thead>
+                <tr class="table-info">
+                    <th scope="col">Name</th>
+                    <th scope="col">Date of birth</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Remove</th>
+                 </tr>
+             </thead>
+             <tbody>
+                <tr v-for="item in custdet">
+                    <th scope="row">{{item.name}}</th>
+                    <td>{{item.birth_date}}</td>
+                    <td>{{item.stu_id}}</td>
+                    <td>{{item.sex}}</td>
+                    <td><button @click='deleteTableRow(index)' >Delete</button></td>
+                 </tr>
+             </tbody>
+            
+         </table>
+         <!-- <customercomponent
+                        v-for = "(item, index) in custdet"
+                        v-bind:item = "item"
+                        v-bind:index = "index"
+                        v-bind:itr = "item"
+                        v-bind:key = "item.fname"
+                        v-on:removeelement = "custdet.splice(index, 1)">
+                    </customercomponent> -->
+      </div>
+      
+      <script src="js/main.js"></script>
+   </body>
+</html>
