@@ -23,18 +23,15 @@
  var vm = new Vue({
     el: '#databinding',
     data: {
+       
+       search: '',
        name:'',
        birth_date:'',
        stu_id : '',
        sex : '',
        custdet:[],
-       styleobj: {
-          backgroundColor: '#2196F3!important',
-          cursor: 'pointer',
-          padding: '8px 16px',
-          verticalAlign: 'middle',
-       }
     },
+    
     methods :{
        showdata : function() {
           this.custdet.push({
@@ -43,18 +40,15 @@
              stu_id: this.stu_id,
              sex : this.sex
           });
-          counter++;
+          
           this.name = "";
           this.birth_date = "";
           this.stu_id = "";
           this.sex = "";
        },
        deleteTableRow: function (idx) { 
-         
          this.custdet.splice(idx, 1);
-    }
-
-         
+    },
    }
  });
 
