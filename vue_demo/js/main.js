@@ -23,7 +23,6 @@
  var vm = new Vue({
     el: '#databinding',
     data: {
-       
        search: '',
        name:'',
        birth_date:'',
@@ -31,6 +30,7 @@
        sex : '',
        custdet:[],
     },
+    
     
     methods :{
        showdata : function() {
@@ -49,6 +49,17 @@
        deleteTableRow: function (idx) { 
          this.custdet.splice(idx, 1);
     },
-   }
+   },
+   computed :{
+       : function(){
+         var self = this;
+         if (this.search == ''){
+            return this.items;
+         }
+         return this.items.filter(function(item) {
+            return item.indexOf(self.search) >=0;
+         }); 
+      }
+   },
  });
 

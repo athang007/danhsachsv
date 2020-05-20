@@ -1,5 +1,5 @@
 .body{
-   overflow: auto;
+   overflow: scroll;
 }
 #databinding{
    padding: 20px 15px 15px 15px;
